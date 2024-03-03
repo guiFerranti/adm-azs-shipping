@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 )
 public interface FindAddressByCepClient {
 
-    @GetMapping("/{cep}")
+    @GetMapping("{cep}/json")
     AddressResponse find(@PathVariable("cep") String cep);
 
 }

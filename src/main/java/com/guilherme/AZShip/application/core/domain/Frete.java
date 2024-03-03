@@ -2,9 +2,11 @@ package com.guilherme.AZShip.application.core.domain;
 
 public class Frete {
 
-    public Frete() {}
+    public Frete() {
+    }
 
-    public Frete(double peso, double altura, double largura, double comprimento, Address address, String cpf, String nome) {
+    public Frete(long id, double peso, double altura, double largura, double comprimento, Address address, String cpf, String nome) {
+        this.id = id;
         this.peso = peso;
         this.altura = altura;
         this.largura = largura;
@@ -84,5 +86,13 @@ public class Frete {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

@@ -14,7 +14,7 @@ public class InsertFreteAdapter implements InsertFreteOutputPort {
     private FreteRepository freteRepository;
 
     @Autowired
-    FreteEntityMapper freteEntityMapper;
+    private FreteEntityMapper freteEntityMapper;
 
     @Override
     public void insert(Frete frete) {

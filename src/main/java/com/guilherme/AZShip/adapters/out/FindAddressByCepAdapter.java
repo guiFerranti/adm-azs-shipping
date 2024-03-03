@@ -21,6 +21,8 @@ public class FindAddressByCepAdapter implements FindAddressByCepOutputPort {
 
         var addressResponse = findAddressByCepClient.find(cep);
 
+        var teste = addressResponseMapper.toAddress(addressResponse);
+
         return addressResponseMapper.toAddress(addressResponse);
     }
 }

@@ -4,13 +4,13 @@ CREATE TABLE fretes (
     altura DOUBLE NOT NULL,
     largura DOUBLE NOT NULL,
     comprimento DOUBLE NOT NULL,
-    cep VARCHAR(8),
+    cep VARCHAR(12),
     logradouro VARCHAR(100),
     complemento VARCHAR(100),
     bairro VARCHAR(100),
     localidade VARCHAR(100),
-    uf VARCHAR(2),
+    uf VARCHAR(5),
     numero INT,
-    cpf VARCHAR(9) NOT NULL,
+    cpf VARCHAR(12) NOT NULL,
     nome VARCHAR(100) NOT NULL
 );

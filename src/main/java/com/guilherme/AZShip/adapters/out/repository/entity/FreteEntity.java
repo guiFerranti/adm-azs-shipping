@@ -1,6 +1,5 @@
 package com.guilherme.AZShip.adapters.out.repository.entity;
 
-import com.guilherme.AZShip.application.core.domain.Address;
 import jakarta.persistence.*;
 import lombok.Data;
 

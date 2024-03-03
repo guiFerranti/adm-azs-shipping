@@ -3,6 +3,7 @@ package com.guilherme.AZShip.application.core.domain;
 public class Address {
 
     public Address() {}
+
     public Address(String cep, String logradouro, String complemento, String bairro, String localidade, String uf, int numero) {
         this.cep = cep;
         this.logradouro = logradouro;

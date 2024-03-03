@@ -15,4 +15,6 @@ public class AddressResponse {
     private String localidade;
 
     private String uf;
+
+
 }
