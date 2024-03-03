@@ -3,9 +3,11 @@ package com.guilherme.AZShip.adapters.in.controller;
 import com.guilherme.AZShip.adapters.in.controller.mapper.FreteMapper;
 import com.guilherme.AZShip.adapters.in.controller.request.FreteRequest;
 import com.guilherme.AZShip.adapters.in.controller.response.FreteResponse;
+import com.guilherme.AZShip.application.core.domain.Frete;
 import com.guilherme.AZShip.application.ports.in.FindFreteByIdInputPort;
 import com.guilherme.AZShip.application.ports.in.FindFretesByParamInputPort;
 import com.guilherme.AZShip.application.ports.in.InsertFreteInputPort;
+import com.guilherme.AZShip.application.ports.in.UpdateFreteInputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,6 +27,9 @@ public class FreteController {
 
     @Autowired
     private FindFreteByIdInputPort findFreteByIdInputPort;
+
+    @Autowired
+    private UpdateFreteInputPort updateFreteInputPort;
 
     @Autowired
     private FreteMapper freteMapper;
@@ -58,5 +63,15 @@ public class FreteController {
 
         return ResponseEntity.ok().body(freteResponse);
 
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateById(@PathVariable final long id, @Valid @RequestBody FreteRequest freteRequest) {
+        Frete frete = freteMapper.toFrete(freteRequest);
+        frete.setId(id);
+
+        updateFreteInputPort.update(frete, freteRequest.getCep());
+
+        return ResponseEntity.noContent().build();
     }
 }
