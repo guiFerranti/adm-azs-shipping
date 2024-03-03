@@ -1,11 +1,10 @@
-package com.guilherme.AZShip.application.ports.out;
+package com.guilherme.AZShip.application.ports.in;
 
 import com.guilherme.AZShip.application.core.domain.Frete;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface FindFreteByParamOutputPort {
+public interface FindFretesByParamInputPort {
 
-    Page<Frete> find(String param, Pageable pageable);
-
+    Page<Frete> find(String id, Pageable pageable);
 }
