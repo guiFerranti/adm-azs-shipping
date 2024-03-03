@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "8860ff3e-eea3-4a5b-b65f-18efe0f3642a",
+		"name": "Fretes V1  Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30653917"
+	},
+	"item": [
+		{
+			"name": "Cadastrar frete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"peso\": 12.3 ,\r\n    \"altura\": 2.3,\r\n    \"largura\": 1.1,\r\n    \"cep\": \"92340180\",\r\n    \"numero\": \"23\",\r\n    \"complemento\": \"23B\",\r\n    \"nomeRecebedor\": \"Guilherme Ferranti\",\r\n    \"telefone\": \"51980261313\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/fretes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fretes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
