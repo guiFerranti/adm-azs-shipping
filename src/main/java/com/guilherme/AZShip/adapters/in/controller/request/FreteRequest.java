@@ -1,6 +1,7 @@
 package com.guilherme.AZShip.adapters.in.controller.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
@@ -17,7 +18,7 @@ public class FreteRequest {
     @NotBlank
     private String cep;
 
-    @NotBlank
+    @Positive
     private int numero;
 
     @NotBlank
