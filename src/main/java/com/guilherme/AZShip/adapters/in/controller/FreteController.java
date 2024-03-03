@@ -3,6 +3,7 @@ package com.guilherme.AZShip.adapters.in.controller;
 import com.guilherme.AZShip.adapters.in.controller.mapper.FreteMapper;
 import com.guilherme.AZShip.adapters.in.controller.request.FreteRequest;
 import com.guilherme.AZShip.adapters.in.controller.response.FreteResponse;
+import com.guilherme.AZShip.application.ports.in.FindFreteByIdInputPort;
 import com.guilherme.AZShip.application.ports.in.FindFretesByParamInputPort;
 import com.guilherme.AZShip.application.ports.in.InsertFreteInputPort;
 import jakarta.validation.Valid;
@@ -23,6 +24,9 @@ public class FreteController {
     private FindFretesByParamInputPort findFretesByParamInputPort;
 
     @Autowired
+    private FindFreteByIdInputPort findFreteByIdInputPort;
+
+    @Autowired
     private FreteMapper freteMapper;
 
 
@@ -36,15 +40,23 @@ public class FreteController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{param}")
+    @GetMapping("/search/{param}")
     public ResponseEntity<Page<FreteResponse>> findByParam(@PathVariable final String param,
                                                            Pageable pageable) {
-
-        //Pageable pageable =
 
         var fretes = findFretesByParamInputPort.find(param, pageable);
         var fretesResponse = freteMapper.toPageFreteResponse(fretes);
 
         return ResponseEntity.ok().body(fretesResponse);
+    }
+    @GetMapping("/{id}")
+
+    public ResponseEntity<FreteResponse> findById(@PathVariable final long id) {
+
+        var frete = findFreteByIdInputPort.find(id);
+        var freteResponse = freteMapper.toFreteResponse(frete);
+
+        return ResponseEntity.ok().body(freteResponse);
+
     }
 }

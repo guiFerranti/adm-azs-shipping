@@ -15,4 +15,5 @@ public interface FreteEntityMapper {
     }
 
     Frete toFrete(FreteEntity freteEntity);
+
 }

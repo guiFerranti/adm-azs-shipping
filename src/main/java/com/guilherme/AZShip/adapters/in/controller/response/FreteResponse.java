@@ -6,6 +6,8 @@ import lombok.Data;
 @Data
 public class FreteResponse {
 
+    private long id;
+
     private double peso;
 
     private double altura;

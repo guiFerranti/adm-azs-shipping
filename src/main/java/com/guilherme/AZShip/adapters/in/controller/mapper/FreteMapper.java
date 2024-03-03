@@ -11,7 +11,6 @@ import org.springframework.data.domain.Page;
 public interface FreteMapper {
 
     @Mapping(target = "address", ignore = true)
-    @Mapping(target = "id", ignore = true)
     Frete toFrete(FreteRequest freteRequest);
 
     default Page<FreteResponse> toPageFreteResponse(Page<Frete> fretes) {
