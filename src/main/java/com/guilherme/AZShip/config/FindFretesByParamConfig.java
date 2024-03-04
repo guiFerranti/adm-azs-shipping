@@ -1,5 +1,6 @@
 package com.guilherme.AZShip.config;
 
+import com.guilherme.AZShip.adapters.out.FindFreteByParamAdapter;
 import com.guilherme.AZShip.application.core.useCase.FindFretesByParamUseCase;
 import com.guilherme.AZShip.application.ports.out.FindFreteByParamOutputPort;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +11,7 @@ public class FindFretesByParamConfig {
 
     @Bean
     public FindFretesByParamUseCase findFretesByParamUseCase(
-            FindFreteByParamOutputPort findFreteByParamOutputPort
+            FindFreteByParamAdapter findFreteByParamOutputPort
     ) {
         return new FindFretesByParamUseCase(findFreteByParamOutputPort);
     }

@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,6 @@ public class FreteController {
     @Autowired
     private FreteMapper freteMapper;
 
-
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody FreteRequest freteRequest) {
 
@@ -46,16 +46,17 @@ public class FreteController {
     }
 
     @GetMapping("/search/{param}")
-    public ResponseEntity<Page<FreteResponse>> findByParam(@PathVariable final String param,
-                                                           Pageable pageable) {
+    public ResponseEntity<Page<FreteResponse>> findByParam(
+            @PathVariable final String param,
+            @PageableDefault(size = 5) Pageable pageable) {
 
         var fretes = findFretesByParamInputPort.find(param, pageable);
         var fretesResponse = freteMapper.toPageFreteResponse(fretes);
 
         return ResponseEntity.ok().body(fretesResponse);
     }
-    @GetMapping("/{id}")
 
+    @GetMapping("/{id}")
     public ResponseEntity<FreteResponse> findById(@PathVariable final long id) {
 
         var frete = findFreteByIdInputPort.find(id);

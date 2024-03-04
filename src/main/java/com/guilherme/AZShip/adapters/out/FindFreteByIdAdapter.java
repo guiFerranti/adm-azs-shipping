@@ -1,6 +1,5 @@
 package com.guilherme.AZShip.adapters.out;
 
-import com.guilherme.AZShip.adapters.in.controller.mapper.FreteMapper;
 import com.guilherme.AZShip.adapters.out.repository.FreteRepository;
 import com.guilherme.AZShip.adapters.out.repository.mapper.FreteEntityMapper;
 import com.guilherme.AZShip.application.core.domain.Frete;

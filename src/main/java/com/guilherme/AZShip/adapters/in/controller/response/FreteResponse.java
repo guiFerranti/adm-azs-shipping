@@ -1,6 +1,5 @@
 package com.guilherme.AZShip.adapters.in.controller.response;
 
-import com.guilherme.AZShip.adapters.out.client.response.AddressResponse;
 import lombok.Data;
 
 @Data

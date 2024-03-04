@@ -1,7 +1,6 @@
 package com.guilherme.AZShip.adapters.out.repository;
 
 import com.guilherme.AZShip.adapters.out.repository.entity.FreteEntity;
-import com.guilherme.AZShip.application.core.domain.Frete;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
