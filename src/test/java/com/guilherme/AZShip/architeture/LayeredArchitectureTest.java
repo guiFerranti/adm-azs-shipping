@@ -2,7 +2,6 @@ package com.guilherme.AZShip.architeture;
 
 
 import com.tngtech.archunit.junit.AnalyzeClasses;
-import com.tngtech.archunit.junit.ArchTag;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -48,13 +47,9 @@ public class LayeredArchitectureTest {
             .whereLayer("PortsIn").mayOnlyBeAccessedByLayers("UseCase", "AdaptersIn")
 
             // layer PortsOut control
-            .whereLayer("PortsOut").mayOnlyBeAccessedByLayers("UseCase", "AdaptersOut");
+            .whereLayer("PortsOut").mayOnlyBeAccessedByLayers("UseCase", "AdaptersOut")
 
             // layer Config control
-//            .whereLayer("Config").mayNotBeAccessedByAnyLayer();
-
-
-
-
+            .whereLayer("Config").mayNotBeAccessedByAnyLayer();
 
 }

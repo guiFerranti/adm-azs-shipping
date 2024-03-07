@@ -15,9 +15,10 @@ public class FreteResponse {
 
     private double comprimento;
 
-    private AddressResponse address;
-
     private String cpf;
 
     private String nome;
+
+    private AddressResponse address;
+
 }
