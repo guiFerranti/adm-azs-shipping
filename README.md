@@ -11,11 +11,25 @@ Arquitetura utilizada: Port and Adapters
 - Docker e Docker Compose
 - MySQL
 
-## Como rodar o projeto
+### Passos para executar o projeto
 
-1. Clone este repositório
-2. Navegue até o diretório do projeto
-3. Execute `docker-compose up`
+1. **Clone este repositório**: Execute o seguinte comando em seu terminal para clonar o repositório:
+
+```bash
+   git clone https://github.com/guiFerranti/adm-azs-shipping.git
+```
+
+2. **Navegue até o diretório do projeto**: Use o comando `cd` para entrar no diretório recém-clonado:
+
+```bash
+cd adm-azs-shipping
+```
+
+3. **Execute o Docker Compose**: Certifique-se de que o Docker esteja em execução e execute o Docker Compose para configurar e iniciar os contêineres necessários:
+
+```bash
+docker-compose up
+```
 
 O serviço estará disponível na porta 8080.
 
